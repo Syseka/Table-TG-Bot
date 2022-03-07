@@ -22,9 +22,10 @@ cols = ['MATCH', 'TIP', 'ODDS', 'SCORE', 'RESULT']
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton("Начать запись.")
-    btn2 = types.KeyboardButton("Сброс")
-    markup.add(btn1, btn2)
-# Две кнопки. Одна начинает запись, вторая делает сброс.
+    btn2 = types.KeyboardButton("Загрузка в БД.")
+    btn3 = types.KeyboardButton("Сброс значений.")
+    markup.add(btn1, btn2, btn3)
+# три кнопки. Одна начинает запись, вторая отправляет данные в БД, третья - очищает введенные значения..
     bot.send_message(message.chat.id,
                      text=f"Привет, {message.from_user.first_name}. Для передачи значений "
                           f"необходимо нажать на соответствующую кнопку и ввести поочередно, "
