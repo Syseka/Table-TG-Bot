@@ -38,29 +38,6 @@ f"""
 6 - RESULT                   
 """, reply_markup=markup)
 
-cnt = 0
 
-def enter(m):
-    txt = m.text
-    for cnt in range(len(cols)):
-        brep = bot.reply_to(m, f'Значение передано: {txt}. '
-                        f'Ждем ввода: {cols[cnt]}')
-        cnt += 1
-        bot.register_next_step_handler(brep, enter)
-    else:
-        bot.send_message(m.chat.id, text=f"Ввод завершен.")
-
-@bot.message_handler(content_types=['text'])
-def buttons(message):
-    txt = message.text
-    if (txt == "Начать запись."):
-        bmes = bot.send_message(message.chat.id, text=f"Ввод DATE...")
-        bot.register_next_step_handler(bmes, enter)
-# При нажатии на кнопку выводится ссобщения о DATE
-# и начинается ожидание ввода от пользователя с вызовом фунции ENTER.
-
-    elif (txt == "Сброс"):
-        bot.send_message(message.chat.id, text=f"Txt me something.")
-# Тут будет отмена ввода.
 
 bot.polling(none_stop=True)
