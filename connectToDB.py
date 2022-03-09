@@ -3,6 +3,7 @@
 import mysql.connector
 from mysql.connector import Error
 from configDB import usH, usN, usP
+# import modules and DB log:pass from file
 
 #table = """CREATE TABLE `a0263496_bfb_stat_tgbot`.`Table1` (
 #  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -17,6 +18,7 @@ from configDB import usH, usN, usP
 
 def connectDB(hostN, userN, userP):
     global connection
+# its really need
     connection = None
     try:
         connection = mysql.connector.connect(
