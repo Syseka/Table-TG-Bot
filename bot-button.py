@@ -3,8 +3,6 @@
 import tokenbot
 import telebot
 from telebot import types
-# import mysql-connector-python
-# I need it soon.
 
 bot = telebot.TeleBot(tokenbot.token)
 # import bot-token
