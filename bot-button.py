@@ -32,9 +32,9 @@ connectDB(usH, usN, usP)
 @bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    #btn1 = types.KeyboardButton("Начать запись.")
     btn1 = types.KeyboardButton("Загрузка в БД.")
     btn2 = types.KeyboardButton("Сброс значений.")
+    #btn3 = types.KeyboardButton("Выгрузка из ДБ.")
     markup.add(btn1, btn2)
     global list
     list = []
@@ -63,6 +63,11 @@ def loadToDB(message):
         list=[]
         bot.send_message(message.chat.id, text=f"List del: {list}.")
 # That code clean array from data.
+    elif (message.text == "Загрузка в БД."):
+
+        bot.send_message(message.chat.id, text=f"Data: ")
+# Show, what in DB.
+# I need do it soon.
     elif (message.text == "Загрузка в БД."):
         bot.send_message(message.chat.id, text=f"Data {list} load.")
 
